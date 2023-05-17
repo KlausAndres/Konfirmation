@@ -11,6 +11,12 @@ const COLOR = {'dark': '#147874', 'light': '#B1CDBD',
 func _ready():
 	Sidebar.rect_min_size = Vector2(70, 0)
 	_hide_Navitems_label()
+	$HBoxContainer/Body/Content/get_name.text = OS.get_name()
+	$HBoxContainer/Body/Content/win_size.text = String(get_viewport().size)
+
+	
+func _process(_delta):
+	$HBoxContainer/Body/Content/win_size.text = String(get_viewport().size)
 
 
 func _on_ToggleButton_gui_input(event):
