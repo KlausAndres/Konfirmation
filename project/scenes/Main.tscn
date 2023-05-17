@@ -167,7 +167,7 @@ valign = 1
 
 [node name="Header" type="Label" parent="HBoxContainer/Body/TopBar/Titlebar"]
 margin_left = 204.0
-margin_right = 1246.0
+margin_right = 1450.0
 margin_bottom = 86.0
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0.0784314, 0.470588, 0.454902, 1 )
@@ -176,19 +176,40 @@ text = "Meine Konfirmation"
 align = 1
 valign = 1
 
-[node name="Hardware" type="Label" parent="HBoxContainer/Body/TopBar/Titlebar"]
-margin_left = 1250.0
-margin_top = 28.0
-margin_right = 1450.0
-margin_bottom = 57.0
-rect_min_size = Vector2( 200, 0 )
-align = 1
-
 [node name="Content" type="Control" parent="HBoxContainer/Body"]
 margin_top = 90.0
 margin_right = 1450.0
 margin_bottom = 1000.0
 size_flags_vertical = 3
+
+[node name="ImageViewer" type="HBoxContainer" parent="HBoxContainer/Body/Content"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonLeft" type="Button" parent="HBoxContainer/Body/Content/ImageViewer"]
+margin_top = 430.0
+margin_right = 100.0
+margin_bottom = 480.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_vertical = 4
+text = "LEFT"
+
+[node name="Image" type="TextureRect" parent="HBoxContainer/Body/Content/ImageViewer"]
+margin_left = 104.0
+margin_right = 1346.0
+margin_bottom = 910.0
+size_flags_horizontal = 3
+expand = true
+stretch_mode = 6
+
+[node name="ButtonRight" type="Button" parent="HBoxContainer/Body/Content/ImageViewer"]
+margin_left = 1350.0
+margin_top = 430.0
+margin_right = 1450.0
+margin_bottom = 480.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_vertical = 4
+text = "RIGHT"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
@@ -196,3 +217,5 @@ anims/Sidebar_animation = SubResource( 3 )
 
 [connection signal="resized" from="." to="." method="_on_Main_resized"]
 [connection signal="gui_input" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/ToggleButton" to="." method="_on_ToggleButton_gui_input"]
+[connection signal="pressed" from="HBoxContainer/Body/Content/ImageViewer/ButtonLeft" to="." method="_on_ButtonLeft_pressed"]
+[connection signal="pressed" from="HBoxContainer/Body/Content/ImageViewer/ButtonRight" to="." method="_on_ButtonRight_pressed"]
