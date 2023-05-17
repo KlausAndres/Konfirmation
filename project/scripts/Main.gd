@@ -12,19 +12,19 @@ const COLOR = {'dark': '#147874', 'light': '#B1CDBD',
 func _ready():
 	Sidebar.rect_min_size = Vector2(70, 0)
 	_hide_Navitems_label()
-	
-	# get_tree().set_screen_stretch(0, 4, Vector2(100, 100), 2.0)
-	
+	$HBoxContainer/Body/TopBar/Titlebar/Hardware.text = String(OS.get_name())
 
-func _process(delta):
+func _on_Main_resized():
+	$HBoxContainer/Body/TopBar/Titlebar/WinSize.text = String(get_viewport().size)
+	_update_scale()
+
+func _update_scale():
 	width = get_viewport().size.x
 	if width > 1000:
 		scale = 1.0
 	elif width <= 1000:
-		scale = 0.5
+		scale = 0.8
 	get_tree().set_screen_stretch(0, 4, Vector2(100, 100), scale)
-
-
 
 
 func _on_ToggleButton_gui_input(event):
@@ -48,3 +48,5 @@ func _hide_Navitems_label():
 	var navitems = get_tree().get_nodes_in_group('NavItem')
 	for navitem in navitems:
 		navitem.hide_label()
+
+
