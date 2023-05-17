@@ -3,7 +3,8 @@ extends Control
 onready var AnimationPlayer = $AnimationPlayer
 onready var Sidebar = $HBoxContainer/Sidebar
 
-
+var width
+var scale
 
 const COLOR = {'dark': '#147874', 'light': '#B1CDBD', 
 	'white': '#FFFFFF', 'background': '#BEAA90'}
@@ -11,12 +12,19 @@ const COLOR = {'dark': '#147874', 'light': '#B1CDBD',
 func _ready():
 	Sidebar.rect_min_size = Vector2(70, 0)
 	_hide_Navitems_label()
-	$HBoxContainer/Body/Content/get_name.text = OS.get_name()
-	$HBoxContainer/Body/Content/win_size.text = String(get_viewport().size)
-
 	
-func _process(_delta):
-	$HBoxContainer/Body/Content/win_size.text = String(get_viewport().size)
+	# get_tree().set_screen_stretch(0, 4, Vector2(100, 100), 2.0)
+	
+
+func _process(delta):
+	width = get_viewport().size.x
+	if width > 1000:
+		scale = 1.0
+	elif width <= 1000:
+		scale = 0.5
+	get_tree().set_screen_stretch(0, 4, Vector2(100, 100), scale)
+
+
 
 
 func _on_ToggleButton_gui_input(event):
