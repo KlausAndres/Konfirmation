@@ -172,16 +172,16 @@ margin_bottom = 1000.0
 size_flags_vertical = 3
 
 [node name="get_name" type="Label" parent="HBoxContainer/Body/Content"]
-margin_left = 659.0
-margin_top = 222.0
-margin_right = 699.0
-margin_bottom = 236.0
+margin_left = 88.0
+margin_top = 239.0
+margin_right = 128.0
+margin_bottom = 253.0
 
 [node name="win_size" type="Label" parent="HBoxContainer/Body/Content"]
-margin_left = 651.0
-margin_top = 368.0
-margin_right = 691.0
-margin_bottom = 382.0
+margin_left = 102.0
+margin_top = 347.0
+margin_right = 142.0
+margin_bottom = 361.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
