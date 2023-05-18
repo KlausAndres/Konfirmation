@@ -4,7 +4,7 @@ export (StreamTexture) var icon
 export (String) var label
 export (bool) var active = false
 
-# signal item_activated
+signal item_activated
 
 func _ready():
 	$Icon.texture = icon
@@ -41,9 +41,10 @@ func _on_NavItem_mouse_exited():
 
 func _on_NavItem_gui_input(event):
 	if event is InputEventMouseButton:
-		if event.is_pressed() and event.get_button_index() == 1:
+		if event.is_pressed() and event.get_button_index() == 1 and Data.login:
 			# deactivate all items
 			var navitems = get_tree().get_nodes_in_group('NavItem')
 			for navitem in navitems:
 				navitem.deactivate()
 			activate()
+			emit_signal("item_activated")

@@ -14,6 +14,10 @@ config/name="Konfirmation"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Data="*res://scripts/Data.gd"
+
 [display]
 
 window/size/width=1600
