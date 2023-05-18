@@ -3,6 +3,8 @@ extends Control
 onready var AnimationPlayer = $AnimationPlayer
 onready var Sidebar = $HBoxContainer/Sidebar
 onready var ImageContainer = $HBoxContainer/Body/Content/ImageViewer/Image
+onready var Home = $HBoxContainer/Body/Content/Home
+onready var HomeItem = $HBoxContainer/Sidebar/VBoxContainer/TopContainer/Home
 
 var images : Array = [preload("res://assets/img/Bild1.JPG"), preload("res://assets/img/Bild2.JPG"),
 						preload("res://assets/img/Bild3.JPG"), preload("res://assets/img/Bild4.JPG")]
@@ -15,6 +17,8 @@ func _ready():
 	Sidebar.rect_min_size = Vector2(70, 0)
 	_hide_Navitems_label()
 	_update_image()
+	Home.visible = true
+	HomeItem.activate()
 	
 func _update_image():
 	ImageContainer.set_texture(images[image_index % len(images)])
