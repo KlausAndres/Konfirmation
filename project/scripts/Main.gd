@@ -13,7 +13,9 @@ onready var SignIn = $HBoxContainer/Body/Content/SignIn
 onready var Home = $HBoxContainer/Body/Content/Home
 onready var Header = $HBoxContainer/Body/TopBar/Titlebar/Header
 onready var Settings = $HBoxContainer/Body/Content/Settings
-
+onready var Username = $HBoxContainer/Body/Content/SignIn/Username
+onready var Password = $HBoxContainer/Body/Content/SignIn/Password
+onready var Status = $HBoxContainer/Body/Content/SignIn/Status
 
 var images_konfirmant : Array = [preload("res://assets/img/Konfirmant/Konfirmant_01.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_02.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_03.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_04.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_05.JPEG")]
 
@@ -129,3 +131,20 @@ func _on_Settings_item_activated():
 	_hide_all_content()
 	Header.text = 'Settings'
 	Settings.visible = true
+
+
+func _on_OKButton_pressed():
+	if  Data.user_names.has(hash(Username.text)) and hash(Password.text) == Data.password:
+		Data.login = true
+		SignIn.visible = false
+		Home.visible = true
+	elif Data.user_names.has(hash(Username.text)) == false and hash(Password.text) != Data.password:
+		Status.text = 'Bitte Benutzernamen und Passwort prüfen'
+		Username.show_error()
+		Password.show_error()
+	elif Data.user_names.has(hash(Username.text)) == false:
+		Status.text = 'Bitte Benutzernamen prüfen'
+		Username.show_error()
+	elif hash(Password.text) != Data.password:
+		Status.text = 'Bitte Passwort prüfen'
+		Password.show_error()

@@ -20,6 +20,8 @@ color = Color( 0.0784314, 0.470588, 0.454902, 1 )
 margin_left = 70.0
 margin_right = 225.0
 margin_bottom = 50.0
+input_pass_on_modal_close_click = false
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 valign = 1
 
 [node name="Icon" type="Sprite" parent="."]

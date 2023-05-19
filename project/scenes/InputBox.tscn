@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/InputBox.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/roboto/Roboto-Light.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=10]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.694118, 0.803922, 0.741176, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id=11]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0784314, 0.470588, 0.454902, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color( 1, 0.113725, 0.113725, 0.623529 )
+
+[sub_resource type="Theme" id=9]
+resource_local_to_scene = true
+LineEdit/colors/clear_button_color = Color( 0.109804, 0.0980392, 0.0862745, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 0.109804, 0.0980392, 0.0862745, 1 )
+LineEdit/colors/cursor_color = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color = Color( 0.109375, 0.0986474, 0.0858765, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/styles/focus = SubResource( 10 )
+LineEdit/styles/normal = SubResource( 11 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "grow"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
+
+[node name="InputBox" type="LineEdit"]
+margin_left = 700.0
+margin_top = 154.0
+margin_right = 900.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 200, 0 )
+rect_pivot_offset = Vector2( 100, 10 )
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
+clear_button_enabled = true
+placeholder_alpha = 0.4
+script = ExtResource( 1 )
+color_normal = Color( 0.0784314, 0.470588, 0.454902, 1 )
+color_focus = Color( 0.694118, 0.803922, 0.741176, 1 )
+color_fonts = Color( 0.109804, 0.0980392, 0.0862745, 1 )
+placeholder = "Benutzername"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/grow = SubResource( 5 )
+
+[connection signal="focus_entered" from="." to="." method="_on_InputBox_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_InputBox_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_InputBox_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_InputBox_mouse_exited"]

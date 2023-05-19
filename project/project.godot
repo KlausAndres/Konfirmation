@@ -25,6 +25,10 @@ window/size/height=1000
 window/handheld/orientation="sensor"
 window/stretch/aspect="expand"
 
+[global]
+
+"font oversampl"=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

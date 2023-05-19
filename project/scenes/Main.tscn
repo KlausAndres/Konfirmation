@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://assets/gfx/background.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://themes/Main.tres" type="Theme" id=10]
 [ext_resource path="res://assets/icons/x.svg" type="Texture" id=11]
 [ext_resource path="res://assets/img/Konfirmant/Konfirmant_03.JPG" type="Texture" id=12]
+[ext_resource path="res://scenes/InputBox.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/fonts/roboto/Roboto-Light.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=15]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.0784314, 0.470588, 0.454902, 1 )
@@ -20,7 +23,133 @@ bg_color = Color( 0.0784314, 0.470588, 0.454902, 1 )
 size = 100
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="StyleBoxFlat" id=10]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.694118, 0.803922, 0.741176, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id=11]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0784314, 0.470588, 0.454902, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color( 1, 0.113725, 0.113725, 0.623529 )
+
+[sub_resource type="Theme" id=12]
+resource_local_to_scene = true
+LineEdit/colors/clear_button_color = Color( 0.109804, 0.0980392, 0.0862745, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 0.109804, 0.0980392, 0.0862745, 1 )
+LineEdit/colors/cursor_color = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color = Color( 0.109375, 0.0986474, 0.0858765, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/styles/focus = SubResource( 10 )
+LineEdit/styles/normal = SubResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.694118, 0.803922, 0.741176, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id=14]
+resource_local_to_scene = true
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0784314, 0.470588, 0.454902, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color( 1, 0.113725, 0.113725, 0.623529 )
+
+[sub_resource type="Theme" id=15]
+resource_local_to_scene = true
+LineEdit/colors/clear_button_color = Color( 0.109804, 0.0980392, 0.0862745, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 0.109804, 0.0980392, 0.0862745, 1 )
+LineEdit/colors/cursor_color = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color = Color( 0.109375, 0.0986474, 0.0858765, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/styles/focus = SubResource( 13 )
+LineEdit/styles/normal = SubResource( 14 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.694118, 0.803922, 0.741176, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.0784314, 0.470588, 0.454902, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.694118, 0.803922, 0.741176, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 14 )
+
+[sub_resource type="Theme" id=20]
+resource_local_to_scene = true
+default_font = SubResource( 2 )
+Button/styles/hover = SubResource( 18 )
+Button/styles/normal = SubResource( 17 )
+Button/styles/pressed = SubResource( 19 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 18
+font_data = ExtResource( 14 )
+
+[sub_resource type="Animation" id=9]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("HBoxContainer/Sidebar:rect_min_size")
@@ -35,8 +164,7 @@ tracks/0/keys = {
 "values": [ Vector2( 150, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Sidebar_animation"
+[sub_resource type="Animation" id=21]
 length = 0.15
 step = 0.05
 tracks/0/type = "value"
@@ -186,72 +314,54 @@ margin_bottom = 1000.0
 size_flags_vertical = 3
 
 [node name="SignIn" type="VBoxContainer" parent="HBoxContainer/Body/Content"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/separation = 34
+custom_constants/separation = 73
 
 [node name="LblHeader" type="Label" parent="HBoxContainer/Body/Content/SignIn"]
-margin_left = 551.0
-margin_top = 119.0
-margin_right = 898.0
-margin_bottom = 146.0
+margin_left = 497.0
+margin_top = 229.0
+margin_right = 953.0
+margin_bottom = 256.0
 size_flags_horizontal = 4
-size_flags_vertical = 6
-text = "Bitte melde dich mit deinen Daten an"
+size_flags_vertical = 10
+text = "Bitte melde Dich mit Deiner Benutzerkennung an"
 
-[node name="LblBenutzername" type="Label" parent="HBoxContainer/Body/Content/SignIn"]
-margin_left = 655.0
-margin_top = 299.0
-margin_right = 794.0
-margin_bottom = 326.0
-size_flags_horizontal = 4
-text = "Benutzername"
-
-[node name="Benutzername" type="LineEdit" parent="HBoxContainer/Body/Content/SignIn"]
+[node name="Username" parent="HBoxContainer/Body/Content/SignIn" instance=ExtResource( 13 )]
 margin_left = 625.0
-margin_top = 360.0
+margin_top = 329.0
 margin_right = 825.0
-margin_bottom = 397.0
-rect_min_size = Vector2( 200, 0 )
-size_flags_horizontal = 4
+margin_bottom = 350.0
 size_flags_vertical = 4
+theme = SubResource( 12 )
 
-[node name="LblPasswort" type="Label" parent="HBoxContainer/Body/Content/SignIn"]
-margin_left = 679.0
-margin_top = 431.0
-margin_right = 770.0
-margin_bottom = 458.0
-size_flags_horizontal = 4
-text = "Passwort"
-
-[node name="Passwort" type="LineEdit" parent="HBoxContainer/Body/Content/SignIn"]
+[node name="Password" parent="HBoxContainer/Body/Content/SignIn" instance=ExtResource( 13 )]
 margin_left = 625.0
-margin_top = 492.0
+margin_top = 423.0
 margin_right = 825.0
-margin_bottom = 529.0
-rect_min_size = Vector2( 200, 0 )
-size_flags_horizontal = 4
+margin_bottom = 444.0
 size_flags_vertical = 4
+theme = SubResource( 15 )
 secret = true
+placeholder = "Passwort"
 
-[node name="OKButton" type="Button" parent="HBoxContainer/Body/Content/SignIn"]
-margin_left = 704.0
-margin_top = 563.0
-margin_right = 745.0
-margin_bottom = 596.0
-size_flags_horizontal = 4
+[node name="OKButton" parent="HBoxContainer/Body/Content/SignIn" instance=ExtResource( 15 )]
+margin_left = 675.0
+margin_top = 517.0
+margin_right = 775.0
+margin_bottom = 567.0
 size_flags_vertical = 4
-text = "OK"
+theme = SubResource( 20 )
 
-[node name="Feedback" type="Label" parent="HBoxContainer/Body/Content/SignIn"]
-margin_left = 645.0
-margin_top = 630.0
-margin_right = 805.0
-margin_bottom = 657.0
+[node name="Status" type="Label" parent="HBoxContainer/Body/Content/SignIn"]
+margin_left = 725.0
+margin_top = 640.0
+margin_right = 725.0
+margin_bottom = 662.0
 size_flags_horizontal = 4
 size_flags_vertical = 2
-text = "Status des LogIn"
+custom_colors/font_color = Color( 0.92549, 0.0745098, 0.0745098, 1 )
+custom_fonts/font = SubResource( 16 )
 
 [node name="Home" type="HBoxContainer" parent="HBoxContainer/Body/Content"]
 visible = false
@@ -341,8 +451,8 @@ align = 1
 valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 2 )
-anims/Sidebar_animation = SubResource( 3 )
+anims/RESET = SubResource( 9 )
+anims/Sidebar_animation = SubResource( 21 )
 
 [connection signal="resized" from="." to="." method="_on_Main_resized"]
 [connection signal="gui_input" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/ToggleButton" to="." method="_on_ToggleButton_gui_input"]
@@ -351,5 +461,6 @@ anims/Sidebar_animation = SubResource( 3 )
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/Gast" to="." method="_on_Gast_item_activated"]
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/Location" to="." method="_on_Location_item_activated"]
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/BottomContainer/Settings" to="." method="_on_Settings_item_activated"]
+[connection signal="pressed" from="HBoxContainer/Body/Content/SignIn/OKButton" to="." method="_on_OKButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/Body/Content/ImageViewer/ButtonLeft" to="." method="_on_ButtonLeft_pressed"]
 [connection signal="pressed" from="HBoxContainer/Body/Content/ImageViewer/ButtonRight" to="." method="_on_ButtonRight_pressed"]
