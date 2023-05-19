@@ -13,11 +13,13 @@ func _ready():
 
 func _on_InputBox_focus_entered():
 	$AnimationPlayer.play('grow')
+	OS.show_virtual_keyboard()
 	hide_error()
 
 
 func _on_InputBox_focus_exited():
 	$AnimationPlayer.play_backwards('grow')
+	OS.hide_virtual_keyboard()
 
 
 func show_error():
