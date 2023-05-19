@@ -11,3 +11,6 @@ var user_names = [227087109, 2912368178, 3387954893]
 # Seebergen
 var password = 925213237
 
+# state of the game
+enum state {SIGNIN, HOME, IMAGE_VIEWER, SETTINGS}
+var app_state : int

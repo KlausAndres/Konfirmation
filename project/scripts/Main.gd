@@ -13,9 +13,9 @@ onready var SignIn = $HBoxContainer/Body/Content/SignIn
 onready var Home = $HBoxContainer/Body/Content/Home
 onready var Header = $HBoxContainer/Body/TopBar/Titlebar/Header
 onready var Settings = $HBoxContainer/Body/Content/Settings
-onready var Username = $HBoxContainer/Body/Content/SignIn/Username
-onready var Password = $HBoxContainer/Body/Content/SignIn/Password
-onready var Status = $HBoxContainer/Body/Content/SignIn/Status
+onready var Username = $HBoxContainer/Body/Content/SignIn/VBC/VBC/HBC/Username
+onready var Password = $HBoxContainer/Body/Content/SignIn/VBC/VBC/HBC/Password
+onready var Status = $HBoxContainer/Body/Content/SignIn/VBC/VBC/Status
 
 var images_konfirmant : Array = [preload("res://assets/img/Konfirmant/Konfirmant_01.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_02.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_03.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_04.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_05.JPEG")]
 
@@ -33,6 +33,7 @@ func _ready():
 	Sidebar.rect_min_size = Vector2(70, 0)
 	_hide_Navitems_label()
 	_update_image()
+	Data.app_state = Data.state.SIGNIN
 	SignIn.visible = true
 	# Home.visible = true
 	
@@ -40,18 +41,17 @@ func _update_image():
 	ImageContainer.set_texture(images[image_index % len(images)])
 
 func _on_Main_resized():
-	$HBoxContainer/Body/Content/Settings/WinSize.text = "Bildschirmgröße " + String(get_viewport().size)
 	_update_scale()
 
 
 func _update_scale():
 	var scale
 	var width = get_viewport().size.x
-	if width > 1000:
-		scale = 1.0
-	elif width <= 1000:
-		scale = 0.80
-	get_tree().set_screen_stretch(0, 4, Vector2(100, 100), scale)
+#	if width > 1000:
+#		scale = 1.0
+#	elif width <= 1000:
+#		scale = 0.80
+#	get_tree().set_screen_stretch(0, 4, Vector2(100, 100), scale)
 
 
 func _on_ToggleButton_gui_input(event):
@@ -138,6 +138,7 @@ func _on_OKButton_pressed():
 		Data.login = true
 		SignIn.visible = false
 		Home.visible = true
+		Data.app_state = Data.state.HOME
 	elif Data.user_names.has(hash(Username.text)) == false and hash(Password.text) != Data.password:
 		Status.text = 'Bitte Benutzernamen und Passwort prüfen'
 		Username.show_error()
@@ -148,3 +149,7 @@ func _on_OKButton_pressed():
 	elif hash(Password.text) != Data.password:
 		Status.text = 'Bitte Passwort prüfen'
 		Password.show_error()
+
+func _input(event):
+	if event.is_action_pressed('ui_accept') and Data.app_state == Data.state.SIGNIN:
+		_on_OKButton_pressed()

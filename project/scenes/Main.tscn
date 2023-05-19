@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/gfx/background.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=2]
@@ -15,12 +15,13 @@
 [ext_resource path="res://scenes/InputBox.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/fonts/roboto/Roboto-Light.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/gfx/fish_light_blue.png" type="Texture" id=16]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.0784314, 0.470588, 0.454902, 1 )
 
 [sub_resource type="DynamicFont" id=1]
-size = 100
+size = 80
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=10]
@@ -289,17 +290,17 @@ size_flags_horizontal = 3
 
 [node name="TopBar" type="HBoxContainer" parent="HBoxContainer/Body"]
 margin_right = 1450.0
-margin_bottom = 100.0
+margin_bottom = 80.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="Titlebar" type="HBoxContainer" parent="HBoxContainer/Body/TopBar"]
 margin_right = 1450.0
-margin_bottom = 100.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 
 [node name="Header" type="Label" parent="HBoxContainer/Body/TopBar/Titlebar"]
 margin_right = 1450.0
-margin_bottom = 100.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0.0784314, 0.470588, 0.454902, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -308,60 +309,95 @@ align = 1
 valign = 1
 
 [node name="Content" type="Control" parent="HBoxContainer/Body"]
-margin_top = 104.0
+margin_top = 84.0
 margin_right = 1450.0
 margin_bottom = 1000.0
 size_flags_vertical = 3
 
-[node name="SignIn" type="VBoxContainer" parent="HBoxContainer/Body/Content"]
+[node name="SignIn" type="MarginContainer" parent="HBoxContainer/Body/Content"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/separation = 73
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
 
-[node name="LblHeader" type="Label" parent="HBoxContainer/Body/Content/SignIn"]
-margin_left = 497.0
-margin_top = 229.0
-margin_right = 953.0
-margin_bottom = 256.0
+[node name="VBC" type="VBoxContainer" parent="HBoxContainer/Body/Content/SignIn"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 1420.0
+margin_bottom = 886.0
+custom_constants/separation = 60
+
+[node name="VBC" type="VBoxContainer" parent="HBoxContainer/Body/Content/SignIn/VBC"]
+margin_left = 455.0
+margin_right = 935.0
+margin_bottom = 398.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+custom_constants/separation = 60
+
+[node name="Header" type="Label" parent="HBoxContainer/Body/Content/SignIn/VBC/VBC"]
+margin_left = 12.0
+margin_top = 97.0
+margin_right = 468.0
+margin_bottom = 124.0
 size_flags_horizontal = 4
 size_flags_vertical = 10
+size_flags_stretch_ratio = 0.3
 text = "Bitte melde Dich mit Deiner Benutzerkennung an"
 
-[node name="Username" parent="HBoxContainer/Body/Content/SignIn" instance=ExtResource( 13 )]
-margin_left = 625.0
-margin_top = 329.0
-margin_right = 825.0
-margin_bottom = 350.0
+[node name="HBC" type="HBoxContainer" parent="HBoxContainer/Body/Content/SignIn/VBC/VBC"]
+margin_top = 184.0
+margin_right = 480.0
+margin_bottom = 205.0
+size_flags_horizontal = 4
+custom_constants/separation = 80
+
+[node name="Username" parent="HBoxContainer/Body/Content/SignIn/VBC/VBC/HBC" instance=ExtResource( 13 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 200.0
+margin_bottom = 21.0
 size_flags_vertical = 4
 theme = SubResource( 12 )
 
-[node name="Password" parent="HBoxContainer/Body/Content/SignIn" instance=ExtResource( 13 )]
-margin_left = 625.0
-margin_top = 423.0
-margin_right = 825.0
-margin_bottom = 444.0
+[node name="Password" parent="HBoxContainer/Body/Content/SignIn/VBC/VBC/HBC" instance=ExtResource( 13 )]
+margin_left = 280.0
+margin_top = 0.0
+margin_right = 480.0
+margin_bottom = 21.0
 size_flags_vertical = 4
 theme = SubResource( 15 )
 secret = true
 placeholder = "Passwort"
 
-[node name="OKButton" parent="HBoxContainer/Body/Content/SignIn" instance=ExtResource( 15 )]
-margin_left = 675.0
-margin_top = 517.0
-margin_right = 775.0
-margin_bottom = 567.0
+[node name="OKButton" parent="HBoxContainer/Body/Content/SignIn/VBC/VBC" instance=ExtResource( 15 )]
+margin_left = 190.0
+margin_top = 265.0
+margin_right = 290.0
+margin_bottom = 315.0
 size_flags_vertical = 4
 theme = SubResource( 20 )
 
-[node name="Status" type="Label" parent="HBoxContainer/Body/Content/SignIn"]
-margin_left = 725.0
-margin_top = 640.0
-margin_right = 725.0
-margin_bottom = 662.0
+[node name="Status" type="Label" parent="HBoxContainer/Body/Content/SignIn/VBC/VBC"]
+margin_left = 240.0
+margin_top = 375.0
+margin_right = 240.0
+margin_bottom = 397.0
 size_flags_horizontal = 4
-size_flags_vertical = 2
+size_flags_vertical = 0
 custom_colors/font_color = Color( 0.92549, 0.0745098, 0.0745098, 1 )
 custom_fonts/font = SubResource( 16 )
+
+[node name="Fish" type="TextureRect" parent="HBoxContainer/Body/Content/SignIn/VBC"]
+margin_left = 558.0
+margin_top = 458.0
+margin_right = 832.0
+margin_bottom = 856.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource( 16 )
 
 [node name="Home" type="HBoxContainer" parent="HBoxContainer/Body/Content"]
 visible = false
@@ -440,16 +476,6 @@ margin_bottom = 461.0
 size_flags_horizontal = 4
 text = "Bilder automatisch weiter"
 
-[node name="WinSize" type="Label" parent="HBoxContainer/Body/Content/Settings"]
-margin_top = 501.0
-margin_right = 1450.0
-margin_bottom = 528.0
-rect_min_size = Vector2( 200, 0 )
-size_flags_vertical = 2
-text = "Bildschirmgröße (1000, 1000)"
-align = 1
-valign = 1
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 9 )
 anims/Sidebar_animation = SubResource( 21 )
@@ -461,6 +487,6 @@ anims/Sidebar_animation = SubResource( 21 )
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/Gast" to="." method="_on_Gast_item_activated"]
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/Location" to="." method="_on_Location_item_activated"]
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/BottomContainer/Settings" to="." method="_on_Settings_item_activated"]
-[connection signal="pressed" from="HBoxContainer/Body/Content/SignIn/OKButton" to="." method="_on_OKButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/Body/Content/SignIn/VBC/VBC/OKButton" to="." method="_on_OKButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/Body/Content/ImageViewer/ButtonLeft" to="." method="_on_ButtonLeft_pressed"]
 [connection signal="pressed" from="HBoxContainer/Body/Content/ImageViewer/ButtonRight" to="." method="_on_ButtonRight_pressed"]
