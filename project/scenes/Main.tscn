@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/icons/settings.svg" type="Texture" id=9]
 [ext_resource path="res://themes/Main.tres" type="Theme" id=10]
 [ext_resource path="res://assets/icons/x.svg" type="Texture" id=11]
-[ext_resource path="res://assets/img/Konfirmant/Konfirmant_03.JPG" type="Texture" id=12]
+[ext_resource path="res://assets/img/Home/img_round.png" type="Texture" id=12]
 [ext_resource path="res://scenes/InputBox.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/fonts/roboto/Roboto-Light.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=15]
@@ -315,6 +315,7 @@ margin_bottom = 1000.0
 size_flags_vertical = 3
 
 [node name="SignIn" type="MarginContainer" parent="HBoxContainer/Body/Content"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 30
@@ -404,23 +405,43 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Image" type="TextureRect" parent="HBoxContainer/Body/Content/Home"]
+[node name="MC_1" type="MarginContainer" parent="HBoxContainer/Body/Content/Home"]
 margin_right = 723.0
-margin_bottom = 914.0
+margin_bottom = 916.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+
+[node name="Image" type="TextureRect" parent="HBoxContainer/Body/Content/Home/MC_1"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 673.0
+margin_bottom = 866.0
 size_flags_horizontal = 3
 texture = ExtResource( 12 )
 expand = true
 stretch_mode = 6
 
-[node name="Text" type="Label" parent="HBoxContainer/Body/Content/Home"]
+[node name="MC_2" type="MarginContainer" parent="HBoxContainer/Body/Content/Home"]
 margin_left = 727.0
-margin_top = 138.0
 margin_right = 1450.0
-margin_bottom = 775.0
+margin_bottom = 916.0
 size_flags_horizontal = 3
-text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,"
+[node name="Text" type="Label" parent="HBoxContainer/Body/Content/Home/MC_2"]
+margin_left = 50.0
+margin_top = 429.0
+margin_right = 673.0
+margin_bottom = 486.0
+size_flags_horizontal = 3
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
+align = 1
 autowrap = true
 
 [node name="ImageViewer" type="HBoxContainer" parent="HBoxContainer/Body/Content"]

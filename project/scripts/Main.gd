@@ -11,6 +11,7 @@ onready var ImageContainer = $HBoxContainer/Body/Content/ImageViewer/Image
 onready var ImageViewer = $HBoxContainer/Body/Content/ImageViewer
 onready var SignIn = $HBoxContainer/Body/Content/SignIn
 onready var Home = $HBoxContainer/Body/Content/Home
+onready var HomeText = $HBoxContainer/Body/Content/Home/MC_2/Text
 onready var Header = $HBoxContainer/Body/TopBar/Titlebar/Header
 onready var Settings = $HBoxContainer/Body/Content/Settings
 onready var Username = $HBoxContainer/Body/Content/SignIn/VBC/VBC/HBC/Username
@@ -35,6 +36,7 @@ func _ready():
 	_update_image()
 	Data.app_state = Data.state.SIGNIN
 	SignIn.visible = true
+	# HomeText.text = Data.get_home_text()
 	# Home.visible = true
 	
 func _update_image():
@@ -45,8 +47,9 @@ func _on_Main_resized():
 
 
 func _update_scale():
-	var scale
-	var width = get_viewport().size.x
+	pass 
+	# var scale
+	# var width = get_viewport().size.x
 #	if width > 1000:
 #		scale = 1.0
 #	elif width <= 1000:
@@ -134,19 +137,23 @@ func _on_Settings_item_activated():
 
 
 func _on_OKButton_pressed():
-	if  Data.user_names.has(hash(Username.text)) and hash(Password.text) == Data.password:
+	var _username = Username.text
+	var _password = Password.text
+	if  Data.is_username_valid(_username) and hash(_password) == Data.password:
 		Data.login = true
 		SignIn.visible = false
+		Data.active_user = hash(_username)
+		HomeText.text = Data.get_home_text()
 		Home.visible = true
 		Data.app_state = Data.state.HOME
-	elif Data.user_names.has(hash(Username.text)) == false and hash(Password.text) != Data.password:
+	elif Data.is_username_valid(_username) == false and hash(_password) != Data.password:
 		Status.text = 'Bitte Benutzernamen und Passwort prüfen'
 		Username.show_error()
 		Password.show_error()
-	elif Data.user_names.has(hash(Username.text)) == false:
+	elif Data.is_username_valid(_username) == false:
 		Status.text = 'Bitte Benutzernamen prüfen'
 		Username.show_error()
-	elif hash(Password.text) != Data.password:
+	elif hash(_password) != Data.password:
 		Status.text = 'Bitte Passwort prüfen'
 		Password.show_error()
 
