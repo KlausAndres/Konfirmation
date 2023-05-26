@@ -36,8 +36,11 @@ func _ready():
 	_update_image()
 	Data.app_state = Data.state.SIGNIN
 	SignIn.visible = true
-	# HomeText.text = Data.get_home_text()
-	# Home.visible = true
+#	Data.active_user = 227087109
+#	Data.login = true
+#	HomeText.text = Data.get_home_text()	
+#	Home.visible = true
+
 	
 func _update_image():
 	ImageContainer.set_texture(images[image_index % len(images)])
@@ -47,7 +50,8 @@ func _on_Main_resized():
 
 
 func _update_scale():
-	pass 
+	$HBoxContainer/Body/Content/Settings/WindowSize.text = String(get_viewport().size)
+	# pass 
 	# var scale
 	# var width = get_viewport().size.x
 #	if width > 1000:
@@ -132,7 +136,7 @@ func _on_Location_item_activated():
 
 func _on_Settings_item_activated():
 	_hide_all_content()
-	Header.text = 'Settings'
+	Header.text = 'Download'
 	Settings.visible = true
 
 
@@ -160,3 +164,8 @@ func _on_OKButton_pressed():
 func _input(event):
 	if event.is_action_pressed('ui_accept') and Data.app_state == Data.state.SIGNIN:
 		_on_OKButton_pressed()
+
+
+
+func _on_Button_pressed():
+	var _value = OS.shell_open("https://drive.google.com/drive/folders/1nBL-hLX-BuoRAuwyPacCnz607kFAqWVE?usp=sharing")

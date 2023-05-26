@@ -1,7 +1,6 @@
 extends Node
 
 # login sucessfull?
-# var login : bool = true
 var login : bool = false
 
 # maintain the user_data
@@ -31,7 +30,6 @@ var home_text_data = {
 
 func _ready():
 	_implement_user_data()
-	print(hash('Valerie'))
 
 
 func _implement_user_data():
