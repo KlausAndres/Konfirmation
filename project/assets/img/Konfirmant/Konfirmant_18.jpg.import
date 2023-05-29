@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Konfirmant_18.jpg-eedd14d6ccd09165d98597e2ec6d4df5.stex"
+path="res://.import/Konfirmant_18.JPG-ede5d21dbcc74f19f238775e133e5571.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/Konfirmant/Konfirmant_18.jpg"
-dest_files=[ "res://.import/Konfirmant_18.jpg-eedd14d6ccd09165d98597e2ec6d4df5.stex" ]
+source_file="res://assets/img/Konfirmant/Konfirmant_18.JPG"
+dest_files=[ "res://.import/Konfirmant_18.JPG-ede5d21dbcc74f19f238775e133e5571.stex" ]
 
 [params]
 
