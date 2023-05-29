@@ -277,30 +277,57 @@ icon = ExtResource( 5 )
 label = "Home"
 active = true
 
-[node name="Konfirmant" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
+[node name="KonfiCamp" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 100.0
 margin_right = 150.0
 margin_bottom = 150.0
 icon = ExtResource( 8 )
-label = "Konfirmant"
+label = "Konfi-Camp"
 
-[node name="Gast" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
+[node name="Kirche" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 150.0
 margin_right = 150.0
 margin_bottom = 200.0
 icon = ExtResource( 7 )
-label = "Gäste"
+label = "Kirche"
 
-[node name="Location" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
+[node name="Konfirmant" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 200.0
 margin_right = 150.0
 margin_bottom = 250.0
+icon = ExtResource( 11 )
+label = "Konfirmant"
+
+[node name="Feier" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 250.0
+margin_right = 150.0
+margin_bottom = 300.0
+icon = ExtResource( 11 )
+label = "Feier"
+
+[node name="Gast" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 300.0
+margin_right = 150.0
+margin_bottom = 350.0
+icon = ExtResource( 11 )
+label = "Gäste"
+
+[node name="Location" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 350.0
+margin_right = 150.0
+margin_bottom = 400.0
 icon = ExtResource( 11 )
 label = "Location"
 
@@ -486,39 +513,67 @@ anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ButtonLeft" type="TextureButton" parent="HBoxContainer/Body/Content/ImageViewer"]
-margin_right = 144.0
-margin_bottom = 916.0
+[node name="MC1" type="MarginContainer" parent="HBoxContainer/Body/Content/ImageViewer"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.07
+custom_constants/margin_right = 5
+custom_constants/margin_left = 10
+
+[node name="ButtonLeft" type="TextureButton" parent="HBoxContainer/Body/Content/ImageViewer/MC1"]
+margin_left = 10.0
+margin_right = 35.0
+margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
-size_flags_stretch_ratio = 0.1
 texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 19 )
 texture_hover = ExtResource( 18 )
 expand = true
 stretch_mode = 5
 
-[node name="Image" type="TextureRect" parent="HBoxContainer/Body/Content/ImageViewer"]
-margin_left = 148.0
-margin_right = 1301.0
-margin_bottom = 916.0
+[node name="MC" type="MarginContainer" parent="HBoxContainer/Body/Content/ImageViewer"]
+margin_right = 40.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.8
+size_flags_stretch_ratio = 0.86
+custom_constants/margin_right = 5
+custom_constants/margin_top = 10
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 10
+
+[node name="Image" type="TextureRect" parent="HBoxContainer/Body/Content/ImageViewer/MC"]
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 35.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 expand = true
 stretch_mode = 6
 
-[node name="ButtonRight" type="TextureButton" parent="HBoxContainer/Body/Content/ImageViewer"]
-margin_left = 1305.0
-margin_right = 1450.0
-margin_bottom = 916.0
+[node name="MC2" type="MarginContainer" parent="HBoxContainer/Body/Content/ImageViewer"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.07
+custom_constants/margin_right = 10
+custom_constants/margin_left = 5
+
+[node name="ButtonRight" type="TextureButton" parent="HBoxContainer/Body/Content/ImageViewer/MC2"]
+margin_left = 5.0
+margin_right = 30.0
+margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
-size_flags_stretch_ratio = 0.1
 texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 19 )
 texture_hover = ExtResource( 18 )
@@ -584,11 +639,14 @@ anims/Sidebar_animation = SubResource( 21 )
 [connection signal="resized" from="." to="." method="_on_Main_resized"]
 [connection signal="gui_input" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/ToggleButton" to="." method="_on_ToggleButton_gui_input"]
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/Home" to="." method="_on_Home_item_activated"]
+[connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/KonfiCamp" to="." method="_on_KonfiCamp_item_activated"]
+[connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/Kirche" to="." method="_on_Kirche_item_activated"]
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/Konfirmant" to="." method="_on_Konfirmant_item_activated"]
+[connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/Feier" to="." method="_on_Feier_item_activated"]
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/Gast" to="." method="_on_Gast_item_activated"]
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/TopContainer/Location" to="." method="_on_Location_item_activated"]
 [connection signal="item_activated" from="HBoxContainer/Sidebar/VBoxContainer/BottomContainer/Settings" to="." method="_on_Settings_item_activated"]
 [connection signal="pressed" from="HBoxContainer/Body/Content/SignIn/VBC/VBC/OKButton" to="." method="_on_OKButton_pressed"]
-[connection signal="pressed" from="HBoxContainer/Body/Content/ImageViewer/ButtonLeft" to="." method="_on_ButtonLeft_pressed"]
-[connection signal="pressed" from="HBoxContainer/Body/Content/ImageViewer/ButtonRight" to="." method="_on_ButtonRight_pressed"]
+[connection signal="pressed" from="HBoxContainer/Body/Content/ImageViewer/MC1/ButtonLeft" to="." method="_on_ButtonLeft_pressed"]
+[connection signal="pressed" from="HBoxContainer/Body/Content/ImageViewer/MC2/ButtonRight" to="." method="_on_ButtonRight_pressed"]
 [connection signal="pressed" from="HBoxContainer/Body/Content/Settings/Button" to="." method="_on_Button_pressed"]

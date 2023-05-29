@@ -1,13 +1,8 @@
 extends Control
 
-# TODO
-# - Wischgeste für die Bilder
-# - UI-Scaling in den Settings
-# - Autoscroll in den Settings
-
 onready var AnimationPlayer = $AnimationPlayer
 onready var Sidebar = $HBoxContainer/Sidebar
-onready var ImageContainer = $HBoxContainer/Body/Content/ImageViewer/Image
+onready var ImageContainer = $HBoxContainer/Body/Content/ImageViewer/MC/Image
 onready var ImageViewer = $HBoxContainer/Body/Content/ImageViewer
 onready var SignIn = $HBoxContainer/Body/Content/SignIn
 onready var Home = $HBoxContainer/Body/Content/Home
@@ -18,13 +13,7 @@ onready var Username = $HBoxContainer/Body/Content/SignIn/VBC/VBC/HBC/Username
 onready var Password = $HBoxContainer/Body/Content/SignIn/VBC/VBC/HBC/Password
 onready var Status = $HBoxContainer/Body/Content/SignIn/VBC/VBC/Status
 
-var images_konfirmant : Array = [preload("res://assets/img/Konfirmant/Konfirmant_01.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_02.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_03.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_04.JPG"), preload("res://assets/img/Konfirmant/Konfirmant_05.JPEG")]
-
-var images_gast : Array = [preload("res://assets/img/Gast/Gast_01.JPG"), preload("res://assets/img/Gast/Gast_02.JPG"), preload("res://assets/img/Gast/Gast_03.JPG"),]
-
-var images_location : Array = [preload("res://assets/img/Location/Location_01.JPG"), preload("res://assets/img/Location/Location_02.JPEG"), preload("res://assets/img/Location/Location_03.JPEG"), preload("res://assets/img/Location/Location_04.JPEG"), preload("res://assets/img/Location/Location_05.JPEG")]
-
-var images : Array = images_gast 
+var images : Array = Data.img_konfi_camp
 var image_index : int = 0
 
 const COLOR = {'dark': '#147874', 'light': '#B1CDBD', 
@@ -107,27 +96,53 @@ func _on_Home_item_activated():
 	Header.text = 'Meine Konfirmation'
 	
 
+func _on_KonfiCamp_item_activated():
+	_hide_all_content()
+	images = Data.img_konfi_camp
+	image_index = 0
+	_update_image()
+	Header.text = 'Konfi-Camp'
+	ImageViewer.visible = true
+	
+
+func _on_Kirche_item_activated():
+	_hide_all_content()
+	images = Data.img_kirche
+	image_index = 0
+	_update_image()
+	Header.text = 'Kirche'
+	ImageViewer.visible = true
+	
+
 func _on_Konfirmant_item_activated():
 	_hide_all_content()
-	images = images_konfirmant
+	images = Data.img_konfirmant
 	image_index = 0
 	_update_image()
 	Header.text = 'Konfirmant'
 	ImageViewer.visible = true
-	
+
+
+func _on_Feier_item_activated():
+	_hide_all_content()
+	images = Data.img_feier
+	image_index = 0
+	_update_image()
+	Header.text = 'Feier'
+	ImageViewer.visible = true
+
 
 func _on_Gast_item_activated():
 	_hide_all_content()
-	images = images_gast
+	images = Data.img_gaeste
 	image_index = 0
 	_update_image()
 	Header.text = 'Gast'
 	ImageViewer.visible = true
 
-
 func _on_Location_item_activated():
 	_hide_all_content()
-	images = images_location
+	images = Data.img_location
 	image_index = 0
 	_update_image()
 	Header.text = 'Location'
@@ -169,3 +184,5 @@ func _input(event):
 
 func _on_Button_pressed():
 	var _value = OS.shell_open("https://drive.google.com/drive/folders/1nBL-hLX-BuoRAuwyPacCnz607kFAqWVE?usp=sharing")
+
+
