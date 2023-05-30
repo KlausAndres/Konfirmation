@@ -6,9 +6,21 @@ extends Node
 var login : bool = false
 
 # maintain the user_data
-# Klaus, Valerie
-var user_data_input = [ [227087109, 'Lieber Papa,', 'singular', true],
-						[3387954893, 'Liebe Familie Andres,', 'plural', false]
+var user_data_input = [ [2912368178, 'Lieber Daniel,', 'singular', true],
+						[3387954893, 'Liebe Valerie,', 'singular', true],
+						[229072012, 'Liebe Mama,', 'singular', true],
+						[227087109, 'Lieber Papa,', 'singular', true],
+						[2088963527, 'Liebe Bini,', 'singular', true],
+						[193466821, 'Lieber Opa,', 'singular', true],
+						[227317774, 'Liebe Astrid, lieber Andreas, liebe Lina, lieber Finn,', 'plural', true],
+						[3558194242, 'Liebe Familie Schirmer,', 'plural', true],
+						[3304740395, 'Liebe Tanja, lieber Oke, lieber Marvin,', 'plural', true],
+						[223286155, 'Liebe Heike,', 'singular', true],
+						[4239956604, 'Liebe Sarah, lieber Christoph, liebe Malin, lieber Jonne,', 'plural', false],
+						[3573603586, 'Liebe Bente, lieber Gunnar, liebe Finja, liebe Sarah,', 'plural', false],
+						[3167280139, 'Liebe Susanne, lieber Werner, liebe Sanna,', 'plural', false],
+						[2989589168, 'Liebe Bärbel, lieber Klaus,', 'plural', false],
+						[2774934251, 'Lieber Jan-Peter,', 'singular', false]
 ]
 
 # stores the user data in a dictionary
@@ -17,7 +29,6 @@ var user_data : Dictionary
 # stores the hash of the active user
 var active_user
 
-# Seebergen
 var password = 925213237
 
 
