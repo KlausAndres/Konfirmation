@@ -46,20 +46,20 @@ func _update_scale():
 	
 	var scale
 	var width = get_viewport().size.x
-	var _height = get_viewport().size.y
+	var height = get_viewport().size.y
 	# widescreen
 	if width >= 2000:
 		scale = 1.0
 	# desktop
-	elif width >= 1280:
+	if (width >= 1280 and width < 2000):
 		scale = 0.9
 	# tablet
-	elif width >= 600:
+	if (width >= 600 and width < 1280) or height <= 700:
 		scale = 0.8
 	# mobile
-	elif width >= 300:
+	if (width >= 300 and width < 600) or height <= 450:
 		scale = 0.7	
-	else:
+	if width < 300 or height < 200:
 		scale = 0.6
 	get_tree().set_screen_stretch(0, 4, Vector2(100, 100), scale)
 

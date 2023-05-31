@@ -252,7 +252,7 @@ custom_constants/separation = 0
 margin_right = 150.0
 margin_bottom = 950.0
 size_flags_vertical = 3
-custom_constants/separation = 15
+custom_constants/separation = 10
 
 [node name="ToggleButton" type="Control" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer"]
 margin_right = 150.0
@@ -274,9 +274,9 @@ offset = Vector2( -3, -3 )
 [node name="Home" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 65.0
+margin_top = 60.0
 margin_right = 150.0
-margin_bottom = 115.0
+margin_bottom = 110.0
 icon = ExtResource( 8 )
 label = "Home"
 active = true
@@ -284,54 +284,54 @@ active = true
 [node name="KonfiCamp" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 130.0
+margin_top = 120.0
 margin_right = 150.0
-margin_bottom = 180.0
+margin_bottom = 170.0
 icon = ExtResource( 3 )
 label = "Konfi-Camp"
 
 [node name="Kirche" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 195.0
+margin_top = 180.0
 margin_right = 150.0
-margin_bottom = 245.0
+margin_bottom = 230.0
 icon = ExtResource( 5 )
 label = "Kirche"
 
 [node name="Konfirmant" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 260.0
+margin_top = 240.0
 margin_right = 150.0
-margin_bottom = 310.0
+margin_bottom = 290.0
 icon = ExtResource( 11 )
 label = "Konfirmant"
 
 [node name="Feier" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 325.0
+margin_top = 300.0
 margin_right = 150.0
-margin_bottom = 375.0
+margin_bottom = 350.0
 icon = ExtResource( 21 )
 label = "Feier"
 
 [node name="Gast" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 390.0
+margin_top = 360.0
 margin_right = 150.0
-margin_bottom = 440.0
+margin_bottom = 410.0
 icon = ExtResource( 20 )
 label = "Gäste"
 
 [node name="Location" parent="HBoxContainer/Sidebar/VBoxContainer/TopContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 455.0
+margin_top = 420.0
 margin_right = 150.0
-margin_bottom = 505.0
+margin_bottom = 470.0
 icon = ExtResource( 22 )
 label = "Location"
 
@@ -463,8 +463,9 @@ margin_top = 458.0
 margin_right = 832.0
 margin_bottom = 856.0
 size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 2
 texture = ExtResource( 16 )
+stretch_mode = 6
 
 [node name="Home" type="HBoxContainer" parent="HBoxContainer/Body/Content"]
 visible = false
