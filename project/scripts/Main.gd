@@ -37,17 +37,31 @@ func _update_image():
 func _on_Main_resized():
 	_update_scale()
 
+#Design for desktop displays from 1280×720 through 1920×1080
+#Design for mobile displays from 360×640 through 414×896
+#Design for tablet displays from 601×962 through 1280×800
 
 func _update_scale():
 	$HBoxContainer/Body/Content/Settings/WindowSize.text = String(get_viewport().size)
-	# pass 
-	# var scale
-	# var width = get_viewport().size.x
-#	if width > 1000:
-#		scale = 1.0
-#	elif width <= 1000:
-#		scale = 0.80
-#	get_tree().set_screen_stretch(0, 4, Vector2(100, 100), scale)
+	
+	var scale
+	var width = get_viewport().size.x
+	var _height = get_viewport().size.y
+	# widescreen
+	if width >= 2000:
+		scale = 1.0
+	# desktop
+	elif width >= 1280:
+		scale = 0.9
+	# tablet
+	elif width >= 600:
+		scale = 0.8
+	# mobile
+	elif width >= 300:
+		scale = 0.7	
+	else:
+		scale = 0.6
+	get_tree().set_screen_stretch(0, 4, Vector2(100, 100), scale)
 
 
 func _on_ToggleButton_gui_input(event):
