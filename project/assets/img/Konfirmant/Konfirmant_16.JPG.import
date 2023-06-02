@@ -15,7 +15,7 @@ dest_files=[ "res://.import/Konfirmant_16.JPG-14cf08faf56b054aea68629d8346a613.s
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.1
+compress/lossy_quality=0.4
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

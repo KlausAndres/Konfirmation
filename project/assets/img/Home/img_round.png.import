@@ -15,7 +15,7 @@ dest_files=[ "res://.import/img_round.png-844926800eb6111213fc5e634c62535d.stex"
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.4
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

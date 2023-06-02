@@ -42,7 +42,7 @@ func _on_Main_resized():
 #Design for tablet displays from 601×962 through 1280×800
 
 func _update_scale():
-	$HBoxContainer/Body/Content/Settings/WindowSize.text = String(get_viewport().size)
+	$HBoxContainer/Body/Content/Settings/WindowSize.text = "Lossy 0.4" + String(get_viewport().size)
 	
 	var scale
 	var width = get_viewport().size.x

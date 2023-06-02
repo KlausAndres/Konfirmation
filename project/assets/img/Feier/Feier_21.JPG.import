@@ -15,7 +15,7 @@ dest_files=[ "res://.import/Feier_21.JPG-d02aa7406f19bfa3b701fcb2b7b53c4e.stex" 
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.1
+compress/lossy_quality=0.4
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

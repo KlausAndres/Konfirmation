@@ -15,7 +15,7 @@ dest_files=[ "res://.import/Kirche_01.JPEG-c5c544d5c6dbd262626aaca6cb3703ec.stex
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.1
+compress/lossy_quality=0.4
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
