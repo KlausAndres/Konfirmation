@@ -15,7 +15,7 @@ dest_files=[ "res://.import/Gäste_10.JPEG-a8b2ab456853d33357105a5c0e457f84.stex
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

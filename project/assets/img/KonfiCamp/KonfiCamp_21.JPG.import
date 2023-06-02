@@ -15,7 +15,7 @@ dest_files=[ "res://.import/KonfiCamp_21.JPG-99c290ead71ce15498d4eefb10185126.st
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

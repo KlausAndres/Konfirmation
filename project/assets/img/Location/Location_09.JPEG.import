@@ -15,7 +15,7 @@ dest_files=[ "res://.import/Location_09.JPEG-e4970772e2a3c049bfda2054e8136b3f.st
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
