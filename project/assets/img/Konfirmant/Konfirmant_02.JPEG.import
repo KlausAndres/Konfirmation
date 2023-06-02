@@ -15,7 +15,7 @@ dest_files=[ "res://.import/Konfirmant_02.JPEG-cb0bc68b1b8b97046a71f3f8e45c4327.
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.5
+compress/lossy_quality=0.1
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
