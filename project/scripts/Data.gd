@@ -59,7 +59,7 @@ var img_konfirmant : Array = [preload("res://assets/img/Konfirmant/Konfirmant_01
 
 var img_feier : Array = [preload("res://assets/img/Feier/Feier_01.JPEG"), preload("res://assets/img/Feier/Feier_02.JPG"), preload("res://assets/img/Feier/Feier_03.JPG"),
 							preload("res://assets/img/Feier/Feier_04.JPG"), preload("res://assets/img/Feier/Feier_05.JPG"), preload("res://assets/img/Feier/Feier_06.JPG"),
-							preload("res://assets/img/Feier/Feier_07.JPG"), preload("res://assets/img/Feier/Feier_08.JPEG"), preload("res://assets/img/Feier/Feier_09.JPEG"),
+							preload("res://assets/img/Feier/Feier_07.JPG"), preload("res://assets/img/Feier/Feier_09.JPEG"),
 							preload("res://assets/img/Feier/Feier_10.JPEG"), preload("res://assets/img/Feier/Feier_11.JPEG"), preload("res://assets/img/Feier/Feier_12.JPEG"),
 							preload("res://assets/img/Feier/Feier_13.JPEG"), preload("res://assets/img/Feier/Feier_14.JPEG"), preload("res://assets/img/Feier/Feier_15.JPEG"),
 							preload("res://assets/img/Feier/Feier_16.JPEG"), preload("res://assets/img/Feier/Feier_17.JPG"), preload("res://assets/img/Feier/Feier_18.JPEG"),
